@@ -1,0 +1,23 @@
+.image_container{
+   .slider_container{
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 800px;
+    }
+
+    .image_slide{
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .each-slide > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        height: 350px;
+      }
+      
+}

@@ -1,2 +1,2 @@
 # create-a-monster
-Create A Monster App
+create a monster app
