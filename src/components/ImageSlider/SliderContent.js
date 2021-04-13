@@ -1,20 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React from "react";
+import PropTypes, { arrayOf } from "prop-types";
 import { css, jsx } from "@emotion/react";
 
-export default function SliderContent(props) {
+function SliderContent({children, translate, transition, width }) {
   return (
     <div
       css={css`
-        transform: translateX(-${props.translate}px);
-        transition: transform ease-out ${props.transition}s;
+        transform: translateX(-${translate}px);
+        transition: transform ease-out ${transition}s;
         height: 100%;
-        width: ${props.width}px;
+        width: ${width}px;
         display: flex;
       `}
     >
-      {props.children}
+      {children}
     </div>
   );
 }
+SliderContent.propTypes = {
+  children: arrayOf(PropTypes.node).isRequired,
+}
+export default SliderContent;

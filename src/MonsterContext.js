@@ -17,7 +17,7 @@ const copy = {
         copy: 'Add accessories to your monster- choose from the options below.',
     },
     4: {
-        title: 'step 4 Title',
+        title: 'name your monster',
         copy: 'step 4 copy.',
     },
     5: {
@@ -209,6 +209,105 @@ const monsters = {
         }
     },
     3:{
+        id: 'type3',
+        url: '../../images/monsters/type3/skin/colors/body_col_1.png',
+        colors: [
+            {
+                id: 1,
+                url:'../../images/monsters/type3/skin/colors/body_col_1.png'
+            },
+            {
+                id: 2,
+                url:'../../images/monsters/type3/skin/colors/body_col_2.png'
+            },
+            {
+                id: 3,
+                url:'../../images/monsters/type3/skin/colors/body_col_3.png'
+            }
+        ],
+        eyelashes: [
+            {
+                id: 1,
+                url:'../../images/monsters/type3/skin/eyelashes/eye_1.png'
+            },
+            {
+                id: 2,
+                url:'../../images/monsters/type3/skin/eyelashes/eye_2.png'
+            }
+        ],
+        hair: [
+            {
+                id: 1,
+                url: '../../images/monsters/type3/skin/hair/hair_1.png'
+            },
+            {
+                id: 2,
+                url: '../../images/monsters/type3/skin/hair/hair_2.png'
+            },
+            {
+                id: 3,
+                url: '../../images/monsters/type3/skin/hair/hair_3.png'
+            },
+            {
+                id: 4,
+                url: '../../images/monsters/type3/skin/hair/hair_4.png'
+            },
+            {
+                id: 5,
+                url: '../../images/monsters/type3/skin/hair/hair_5.png'
+            }
+        ],
+        swatches: {
+            colors: [
+                {
+                    id: 1,
+                    url: '../../images/monsters/type3/thumbnails/skin/colors/body_col_1.png'
+                },
+                {
+                    id: 2,
+                    url: '../../images/monsters/type3/thumbnails/skin/colors/body_col_2.png'
+                },
+                {
+                    id: 3,
+                    url: '../../images/monsters/type3/thumbnails/skin/colors/body_col_3.png'
+                }
+            ],
+            hair: [
+                {
+                    id: 1,
+                    url: '../../images/monsters/type3/thumbnails/skin/hair/hair_1.png'
+                },
+                {
+                    id: 2,
+                    url: '../../images/monsters/type3/thumbnails/skin/hair/hair_2.png'
+                },
+                {
+                    id: 3,
+                    url: '../../images/monsters/type3/thumbnails/skin/hair/hair_3.png'
+                },
+                {
+                    id: 4,
+                    url: '../../images/monsters/type3/thumbnails/skin/hair/hair_4.png'
+                },
+                {
+                    id: 5,
+                    url: '../../images/monsters/type3/thumbnails/skin/hair/hair_5.png'
+                }
+            ],
+            eyelashes: [
+                {
+                    id: 1,
+                    url: '../../images/monsters/type3/thumbnails/skin/eyelashes/eye_1.png'
+                },
+                {
+                    id: 2,
+                    url: '../../images/monsters/type3/thumbnails/skin/eyelashes/eye_2.png'
+                },
+                   
+            ]
+        }
+    },
+    4:{
         id: 'type3',
         url: '../../images/monsters/type3/skin/colors/body_col_1.png',
         colors: [

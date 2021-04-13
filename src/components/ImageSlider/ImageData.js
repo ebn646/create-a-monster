@@ -11,10 +11,10 @@ export default ImageData = [
         id: 'type3',
         url: '/images/monsters/type3/skin/colors/body_col_1.png'
     },
-    // {
-    //     id: 'type4',
-    //     url: '/images/monsters/type4/skin/colors/body_col_1.png'
-    // },
+    {
+        id: 'type4',
+        url: '/images/monsters/type4/skin/colors/body_col_1.png'
+    },
     // {
     //     id: 'type5',
     //     url: '/images/monsters/type5/skin/colors/body_col_1.png'
