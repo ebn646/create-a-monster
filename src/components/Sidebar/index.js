@@ -1,19 +1,23 @@
-import React from "react";
-import Header from "./Header";
-import Swatches from "./Swatches";
-import Accessories from "../Accessories";
+import React from 'react'
+import Header from '../Header'
+import Customize from '../Customize'
+import Colors from '../Colors'
+import NameSelector from '../NameSelector'
+import ShareSelector from '../ShareSelector'
+import useMonsterCreator from '../../hooks/useMonsterCreator'
 
-import useMonsterCreator from "../../hooks/useMonsterCreator";
-import "./sidebar.scss";
-
-export default function Sidebar() {
-  const { currentStep } = useMonsterCreator();
+export default function Left() {
+  const { currentStep } = useMonsterCreator()
 
   return (
-    <div style={{zIndex: 1}}>
+    <div style={{ marginLeft: 50 }}>
       <Header />
-      {currentStep === 2 && <Swatches />}
-      {currentStep === 3 && <Accessories />}
+      <div>
+        {currentStep === 2 && <Colors />}
+        {currentStep === 3 && <Customize />}
+        {currentStep === 4 && <NameSelector />}
+        {currentStep === 5 && <ShareSelector />}
+      </div>
     </div>
-  );
+  )
 }

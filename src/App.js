@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import Home from "./components/Home";
-import { MonsterProvider } from "./MonsterContext";
+import React, { useEffect } from 'react'
+import Home from './components/Home'
+import Banner from './components/Banner'
+import { MonsterProvider } from './MonsterContext'
 
 import {
   BrowserRouter as Router,
@@ -8,9 +9,9 @@ import {
   Route,
   Link,
   withRouter,
-  useLocation,
-} from "react-router-dom";
-import "./App.scss";
+  useLocation
+} from 'react-router-dom'
+import './App.scss'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <div className="container">
             <Switch>
               <Route path="/">
+                <Banner />
                 <Home />
               </Route>
             </Switch>
@@ -27,7 +29,7 @@ function App() {
         </div>
       </Router>
     </MonsterProvider>
-  );
+  )
 }
 
-export default App;
+export default App
