@@ -10,7 +10,6 @@ export default function Navigation() {
     <div
       className="navigation"
       css={css`
-        border: 1px solid red;
         height: 100px;
         display: flex;
         align-items: center;
@@ -18,11 +17,12 @@ export default function Navigation() {
         z-index: 1;
       `}
     >
-      {currentStep !== 1 && (
+      {currentStep !== 0 && (
         <button
           css={css`
             color: #b1b1b1;
-            font-family: 'Graduate', serif;
+            cursor: pointer;
+            font-family: 'MutantAcademyBB', serif;
             font-weight: 800;
             height: 60px;
             width: 60px;
@@ -41,11 +41,12 @@ export default function Navigation() {
       {currentStep !== 5 && (
         <button
           css={css`
-            font-family: 'Graduate', serif;
+            font-family: 'MutantAcademyBB', serif;
             text-transform: uppercase;
             font-size: 22px;
             font-weight: 800;
             color: #b1b1b1;
+            cursor: pointer;
             width: 100px;
             height: 100px;
             border-radius: 200px;

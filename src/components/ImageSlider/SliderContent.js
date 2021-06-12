@@ -14,6 +14,8 @@ function SliderContent({ children, translate, transition, width }) {
         width: ${width}px;
         display: flex;
         margin: 0 auto;
+        justify-content: center;
+        align-items: center;
       `}
     >
       {children}

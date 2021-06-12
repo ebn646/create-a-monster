@@ -10,13 +10,13 @@ export default function Left() {
   const { currentStep } = useMonsterCreator()
 
   return (
-    <div style={{ marginLeft: 50 }}>
+    <div style={{ marginLeft: 50, flex: 1 }}>
       <Header />
       <div>
-        {currentStep === 2 && <Colors />}
-        {currentStep === 3 && <Customize />}
-        {currentStep === 4 && <NameSelector />}
-        {currentStep === 5 && <ShareSelector />}
+        {currentStep === 1 && <Colors />}
+        {currentStep === 2 && <Customize />}
+        {currentStep === 3 && <NameSelector />}
+        {currentStep === 4 && <ShareSelector />}
       </div>
     </div>
   )

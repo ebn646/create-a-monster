@@ -1,17 +1,42 @@
 import { useContext } from 'react'
 import { MonsterContext } from '../MonsterContext'
+import * as htmlToImage from 'html-to-image'
 
 function useMonsterCreator() {
-  const [state, setState, copy, monsters, showIcons, setShowIcons] = useContext(
-    MonsterContext
-  )
-
+  const [
+    state,
+    setState,
+    copy,
+    monsters,
+    showIcons,
+    setShowIcons,
+    showHelp,
+    setShowHelp
+  ] = useContext(MonsterContext)
+  const lastStep = 4
   function goForward() {
-    setState(state => ({ ...state, currentStep: state.currentStep + 1 }))
-    setState(state => ({ ...state, stepCopy: copy[state.currentStep] }))
+    if (state.currentStep + 1 === lastStep && !state.monsterNameIsValid) {
+      return
+    } else if (state.currentStep + 1 === lastStep && state.monsterNameIsValid) {
+      var node = document.getElementById('my-monster')
+      htmlToImage
+        .toPng(node)
+        .then(function(dataUrl) {
+          setState(state => ({ ...state, monsterUrl: dataUrl }))
+          setState(state => ({ ...state, currentStep: state.currentStep + 1 }))
+          setState(state => ({ ...state, stepCopy: copy[state.currentStep] }))
+        })
+        .catch(function(error) {
+          console.error('oops, something went wrong!', error)
+        })
+    } else {
+      setState(state => ({ ...state, currentStep: state.currentStep + 1 }))
+      setState(state => ({ ...state, stepCopy: copy[state.currentStep] }))
+    }
   }
 
   function setMonsterType(id) {
+    console.log('setMonsteTypes was called')
     setState(state => ({ ...state, monsterType: monsters[id] }))
   }
 
@@ -39,12 +64,22 @@ function useMonsterCreator() {
   function setMonsterHat(id) {
     setState(state => ({ ...state, monsterHat: id }))
   }
+
   function setMonsterHorn(id) {
     setState(state => ({ ...state, monsterHorn: id }))
   }
 
+  function setMonsterName(str) {
+    setState(state => ({ ...state, monsterName: str }))
+  }
+
   function setShowIcon(bool) {
     setShowIcons(bool)
+  }
+
+  function showHelpGallery(bool) {
+    console.log(bool)
+    setShowHelp(bool)
   }
 
   return {
@@ -57,7 +92,10 @@ function useMonsterCreator() {
     monsterFur: state.monsterFur,
     monsterHat: state.monsterHat,
     monsterHorn: state.monsterHorn,
+    monsterUrl: state.monsterUrl,
+    monsterName: state.monsterName,
     showIcons: showIcons,
+    showHelp: showHelp,
     goForward,
     goBack,
     setMonsterType,
@@ -67,7 +105,9 @@ function useMonsterCreator() {
     setMonsterFur,
     setMonsterHat,
     setShowIcon,
-    setMonsterHorn
+    setMonsterHorn,
+    setMonsterName,
+    showHelpGallery
   }
 }
 export default useMonsterCreator

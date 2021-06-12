@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import Home from './components/Home'
+import Container from './components/Container'
 import Banner from './components/Banner'
+import Help from './components/Help'
 import { MonsterProvider } from './MonsterContext'
 
 import {
@@ -19,10 +20,11 @@ function App() {
       <Router>
         <div id="app">
           <div className="container">
+            <Help />
             <Switch>
               <Route path="/">
                 <Banner />
-                <Home />
+                <Container />
               </Route>
             </Switch>
           </div>

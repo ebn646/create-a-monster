@@ -17,17 +17,17 @@ export default function Monster() {
     monsterHair,
     monsterHat,
     monsterHorn,
-    currentStep
+    currentStep,
+    monsterUrl,
+    monsterName
   } = useMonsterCreator()
 
   useEffect(() => {
-    console.log('monsterType = ', monsterType)
     const url = monsterType.colors.filter(c => c.id === monsterColor)[0].url
     setColor(monsterType.url)
   }, [monsterType])
 
   useEffect(() => {
-    console.log('monsterColor = ', monsterColor)
     const url = monsterType.colors.filter(c => c.id === monsterColor)[0].url
     setColor(url)
   }, [monsterColor])
@@ -46,12 +46,6 @@ export default function Monster() {
       setHair(url)
     }
   }, [monsterHair])
-
-  useEffect(() => {
-    if (monsterHat !== null) {
-      console.log('monsterHat = ', monsterHat)
-    }
-  }, [monsterHat])
 
   return currentStep !== 5 ? (
     <div
@@ -121,29 +115,35 @@ export default function Monster() {
         width: 350px;
         height: 500px;
         z-index: 4;
+        display: flex;
+        align-items: center;
       `}
     >
       <div
+        id="polaroid"
         className="polaroid"
         css={css`
           background: #fff;
           padding: 1rem;
-          box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);;
+          box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+          margin-right: 50px;
           > img{
             max-width: 100%;
             height: auto;
+            border: 1px solid #ccc;
         `}
       >
-        <img src="https://image.ibb.co/crFarc/pexels_photo_100756.jpg" />
+        <img src={monsterUrl} />
         <div
           className="caption"
           css={css`
-            font-size: 1.8rem;
+            font-family: 'Graduate', serif;
+            font-size: 1.5rem;
             text-align: center;
             line-height: 2em;
           `}
         >
-          Summer Day
+          {monsterName}
         </div>
       </div>
     </div>

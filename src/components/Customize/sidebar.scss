@@ -1,5 +1,4 @@
 .progressbar{
-  font-family: 'Catamaran', serif;
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -18,8 +17,8 @@
     z-index: 0;
   }
   .number{
-    font-family: 'Graduate', serif;
-    font-size: 20px;
+    font-family: 'MutantAcademyBB', serif;
+    font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +30,8 @@
     z-index: 1;
 
     &.active{
-      background: #054875;
+      background: #0076bc;
+      ;
     }
   }     
 }

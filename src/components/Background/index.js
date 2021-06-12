@@ -25,11 +25,11 @@ export default function Background() {
       <div
         css={css`
           color: #ccc;
-          font-family: 'Graduate', serif;
-          font-size: 400px;
+          font-family: 'MutantAcademyBB';
+          font-size: 550px;
         `}
       >
-        {`0${currentStep}`}
+        {`0${currentStep + 1}`}
       </div>
     </div>
   )

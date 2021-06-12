@@ -17,6 +17,7 @@ function AccessoryButton({ copy, callback }) {
         position: relative;
         background-color: transparent;
         padding: 0;
+        border: 1px solid #ccc;
       `}
       onClick={() => callback(copy)}
     >
@@ -57,19 +58,8 @@ function AccessoryButton({ copy, callback }) {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            background-image: -webkit-repeating-linear-gradient(
-                left,
-                hsla(0, 0%, 100%, 0) 0%,
-                hsla(0, 0%, 100%, 0) 6%,
-                hsla(0, 0%, 100%, 0.1) 7.5%
-              ),
-              linear-gradient(
-                180deg,
-                hsl(0, 0%, 78%) 0%,
-                hsl(0, 0%, 90%) 47%,
-                hsl(0, 0%, 78%) 53%,
-                hsl(0, 0%, 70%) 100%
-              );
+            background: white;
+            font-weight: bold;
           `}
           onClick={() => setShowIcon(true)}
         >

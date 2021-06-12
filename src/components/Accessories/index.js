@@ -88,7 +88,11 @@ export default function Accessories() {
         `}
       >
         {accessories.map(a => (
-          <AccessoryButton key={a.id} copy={a.type} callback={setAcc} />
+          <AccessoryButton
+            key={Math.random()}
+            copy={a.type}
+            callback={setAcc}
+          />
         ))}
       </div>
     </div>

@@ -1,24 +1,24 @@
 export const copy = {
-  1: {
+  0: {
     title: 'Choose Your Monster',
     copy:
       "Use the blue arrows to see the different monster body types. When you've found a monster you like, click the Next button."
   },
-  2: {
+  1: {
     title: 'Choose Your Color',
     copy:
       'Select what color your monster should be. If you see an "add fur" button, then your monster can even have fur!'
   },
-  3: {
+  2: {
     title: 'Customize Your Monster',
     copy: 'Add accessories to your monster- choose from the options below.'
   },
-  4: {
+  3: {
     title: 'name your monster',
     copy:
       'Type your first name and last initial below then use “Generate” to create your monster name.'
   },
-  5: {
+  4: {
     title: 'share your monster',
     copy:
       "Select one of your monster's photos and share it using the buttons below."
@@ -26,7 +26,7 @@ export const copy = {
 }
 
 export const monsters = {
-  1: {
+  0: {
     index: 0,
     id: 'type1',
     fur: true,
@@ -197,7 +197,7 @@ export const monsters = {
       ]
     }
   },
-  2: {
+  1: {
     id: 'type2',
     index: 1,
     url: '../../images/monsters/type2/skin/colors/body_col_1.png',
@@ -299,7 +299,7 @@ export const monsters = {
       ]
     }
   },
-  3: {
+  2: {
     index: 2,
     id: 'type3',
     url: '../../images/monsters/type3/skin/colors/body_col_1.png',
@@ -401,7 +401,7 @@ export const monsters = {
       ]
     }
   },
-  4: {
+  3: {
     index: 3,
     id: 'type3',
     url: '../../images/monsters/type3/skin/colors/body_col_1.png',

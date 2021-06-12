@@ -1,24 +1,34 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import React from 'react'
 import { jsx, css, Global, ClassNames } from '@emotion/react'
 import useMonsterCreator from '../../hooks/useMonsterCreator'
 
 function Header({ copy }) {
-  const { monsterType, stepCopy } = useMonsterCreator()
+  const { stepCopy } = useMonsterCreator()
 
   return (
     <div
       css={css`
-        border: 1px solid red;
         flex: 1;
+        display: flex;
+        flex-direction: column;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
+        width: 330px;
       `}
     >
-      <div style={{ width: 330 }}>
-        <h3>{stepCopy.title}</h3>
-        <p style={{ marginTop: 0 }}> {stepCopy.copy}</p>
-      </div>
+      <h3
+        css={css`
+          font-family: 'MutantAcademyBB';
+          font-size: 35px;
+          color: #0076bc;
+        `}
+      >
+        {stepCopy.title}
+      </h3>
+      <p style={{ marginTop: 0 }}> {stepCopy.copy}</p>
     </div>
   )
 }
