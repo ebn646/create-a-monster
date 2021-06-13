@@ -6,7 +6,7 @@ import NameSelector from '../NameSelector'
 import ShareSelector from '../ShareSelector'
 import useMonsterCreator from '../../hooks/useMonsterCreator'
 
-export default function Sidebar() {
+export default function SideBar() {
   const { currentStep } = useMonsterCreator()
 
   return (
