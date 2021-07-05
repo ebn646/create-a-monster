@@ -13,8 +13,8 @@ function Arrow({ direction, handleClick }) {
       css={css`
         display: flex;
         position: absolute;
-        top: 65%;
-        ${direction === 'right' ? `left: 75%` : `right: 75%`};
+        top: 50%;
+        ${direction === 'right' ? `left:85%` : `right: 85%`};
         height: 50px;
         width: 50px;
         justify-content: center;

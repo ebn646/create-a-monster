@@ -82,6 +82,10 @@ function useMonsterCreator() {
     setShowHelp(bool)
   }
 
+  function setMonsterNameIsValid(bool) {
+    setState(state => ({ ...state, monsterNameIsValid: bool }))
+  }
+
   return {
     monsterType: state.monsterType,
     currentStep: state.currentStep,
@@ -107,7 +111,8 @@ function useMonsterCreator() {
     setShowIcon,
     setMonsterHorn,
     setMonsterName,
-    showHelpGallery
+    showHelpGallery,
+    setMonsterNameIsValid
   }
 }
 export default useMonsterCreator

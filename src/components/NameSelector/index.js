@@ -41,7 +41,11 @@ const name = {
 }
 
 export default function NameSelector() {
-  const { setMonsterName, monsterName } = useMonsterCreator()
+  const {
+    setMonsterName,
+    monsterName,
+    setMonsterNameIsValid
+  } = useMonsterCreator()
   const [error1, setError1] = useState(false)
   const [error2, setError2] = useState(false)
   const [values, setValues] = useState({
@@ -108,6 +112,7 @@ export default function NameSelector() {
     }
     if (!badwords.words.includes(values.firstName) && values.lastName.length) {
       setMonsterName(values.firstName + ' ' + getLastName(values.lastName))
+      setMonsterNameIsValid(true)
     }
   }
 

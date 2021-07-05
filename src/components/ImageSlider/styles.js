@@ -3,9 +3,13 @@
 import { jsx, css } from '@emotion/react'
 
 export const closeBtn = css`
+  cursor: pointer;
   position: absolute;
-  right: 0;
+  right: 10px;
+  top: 10px;
   z-index: 1;
+  padding: 0;
+  border: 0;
 `
 export const name = css`
   font-family: 'MutantAcademyBB';

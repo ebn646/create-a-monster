@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { jsx, css, Global, ClassNames } from '@emotion/react'
+import { FaRegWindowClose } from 'react-icons/fa'
+import { closeButton } from './styles'
 import SliderContent from './SliderContent'
 import ImageSlide from './ImageSlide'
 import HelpSlide from './HelpSlide'
@@ -135,8 +137,9 @@ function Slider({
     <div css={SliderCSS} ref={sliderRef}>
       {closeButton && (
         <button css={closeBtn} onClick={() => showHelpGallery(false)}>
-          {' '}
-          close
+          <h3>
+            <FaRegWindowClose />
+          </h3>
         </button>
       )}
       <SliderContent

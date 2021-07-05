@@ -1,11 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { jsx, css, Global, ClassNames } from '@emotion/react'
 import useMonsterCreator from '../../hooks/useMonsterCreator'
+import { rules } from 'eslint-config-prettier'
 
 export default function Navigation() {
   const { goForward, goBack, currentStep } = useMonsterCreator()
+  const prev = useRef()
+
+  useEffect(() => {
+    if (currentStep === 4) {
+      prev.current.classList.add('last')
+    }
+  }, [currentStep])
+
   return (
     <div
       className="navigation"
@@ -19,6 +28,7 @@ export default function Navigation() {
     >
       {currentStep !== 0 && (
         <button
+          ref={prev}
           css={css`
             color: #b1b1b1;
             cursor: pointer;
@@ -32,13 +42,18 @@ export default function Navigation() {
               0px 1px 2px rgba(0, 0, 0, 0.2);
             background: radial-gradient(#fbfbfb, #e1e1e1);
             border: 4px solid #d4d4d4;
+            &.last {
+              font-size: 22px;
+              width: 100px;
+              height: 100px;
+            }
           `}
           onClick={goBack}
         >
           Prev
         </button>
       )}
-      {currentStep !== 5 && (
+      {currentStep !== 4 && (
         <button
           css={css`
             font-family: 'MutantAcademyBB', serif;

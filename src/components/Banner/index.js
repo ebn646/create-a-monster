@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { css, jsx } from '@emotion/react'
+import { FaRegQuestionCircle } from 'react-icons/fa'
 import { closeButton } from './styles'
 import useMonsterCreator from '../../hooks/useMonsterCreator'
 
@@ -28,7 +29,9 @@ export default function Banner() {
     >
       <h1>create-a-monster</h1>
       <button css={closeButton} onClick={() => showHelpGallery(true)}>
-        help
+        <h3>
+          <FaRegQuestionCircle />
+        </h3>
       </button>
     </div>
   )

@@ -22,7 +22,7 @@ function Header({ copy }) {
       <h3
         css={css`
           font-family: 'MutantAcademyBB';
-          font-size: 35px;
+          font-size: 33px;
           color: #0076bc;
         `}
       >

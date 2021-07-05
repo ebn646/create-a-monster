@@ -46,7 +46,7 @@ function Home({ history }) {
       </div>
       {currentStep === 0 && (
         <>
-          <div style={{ position: 'absolute' }}>
+          <div style={{ position: 'absolute', left: 50 }}>
             <Header />
           </div>
           <ImageSlider
