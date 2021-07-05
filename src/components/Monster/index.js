@@ -23,6 +23,10 @@ export default function Monster() {
   } = useMonsterCreator()
 
   useEffect(() => {
+    console.log('currentStep = ', currentStep)
+  }, [currentStep])
+
+  useEffect(() => {
     const url = monsterType.colors.filter(c => c.id === monsterColor)[0].url
     setColor(monsterType.url)
   }, [monsterType])
@@ -47,7 +51,7 @@ export default function Monster() {
     }
   }, [monsterHair])
 
-  return currentStep !== 5 ? (
+  return currentStep !== 4 ? (
     <div
       id="my-monster"
       css={css`

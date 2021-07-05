@@ -36,7 +36,6 @@ function useMonsterCreator() {
   }
 
   function setMonsterType(id) {
-    console.log('setMonsteTypes was called')
     setState(state => ({ ...state, monsterType: monsters[id] }))
   }
 
