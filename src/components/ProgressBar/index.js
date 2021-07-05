@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react'
 import { jsx, css, Global, ClassNames } from '@emotion/react'
 import useMonsterCreator from '../../hooks/useMonsterCreator'
+import styled from 'styled-components'
+import './progressbar.scss'
 
-const progressbar = css`
+const StepProgress = styled.div`
   font-family: 'Catamaran', serif;
   display: flex;
   justify-content: space-between;
@@ -13,18 +15,9 @@ const progressbar = css`
   height: 60px;
   margin-top: 10px;
   position: relative;
-  &:after {
-    content: '';
-    width: 400px;
-    height: 3px;
-    background: black;
-    position: absolute;
-    top: 20px;
-    z-index: 0;
-  }
 `
 
-const number = css`
+const Number = styled.div`
   font-family: 'MutantAcademyBB', serif;
   font-size: 20px;
   display: flex;
@@ -45,12 +38,48 @@ export default function ProgressBar() {
   const { currentStep } = useMonsterCreator()
 
   return (
-    <div className="progressbar">
-      <div className={`number ${currentStep === 0 && 'active'}`}>01</div>
-      <div className={`number ${currentStep === 1 && 'active'}`}>02</div>
-      <div className={`number ${currentStep === 2 && 'active'}`}>03</div>
-      <div className={`number ${currentStep === 3 && 'active'}`}>04</div>
-      <div className={`number ${currentStep === 4 && 'active'}`}>05</div>
-    </div>
+    <StepProgress>
+      <div className="bar">
+        <div
+          className="over"
+          style={{ width: `${(currentStep / 4) * 100}%` }}
+        />
+      </div>
+      <div
+        id="0"
+        className={`number ${currentStep === 0 && 'active'} ${currentStep > 0 &&
+          'blue'}`}
+      >
+        <span>01</span>
+      </div>
+      <div
+        id="1"
+        className={`number ${currentStep === 1 && 'active'} ${currentStep > 1 &&
+          'blue'}`}
+      >
+        <span>02</span>
+      </div>
+      <div
+        id="2"
+        className={`number ${currentStep === 2 && 'active'} ${currentStep > 2 &&
+          'blue'}`}
+      >
+        <span>03</span>
+      </div>
+      <div
+        id="3"
+        className={`number ${currentStep === 3 && 'active'} ${currentStep > 3 &&
+          'blue'}`}
+      >
+        <span>04</span>
+      </div>
+      <div
+        id="4"
+        className={`number ${currentStep === 4 && 'active'} ${currentStep > 4 &&
+          'blue'}`}
+      >
+        <span>05</span>
+      </div>
+    </StepProgress>
   )
 }
